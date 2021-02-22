@@ -144,8 +144,7 @@ public class MainActivity extends AppCompatActivity {
 
     createUpdateStatusText();
 
-    mUpdateStatus
-            .setText(UPDATE_MESSAGE.replace("#STATUS#", "..."));
+    mUpdateStatus.setText(UPDATE_MESSAGE);//.replace("#STATUS#", "..."));
 
     mUpdateReceiver.register(MainActivity.this);
 
@@ -1126,13 +1125,11 @@ public class MainActivity extends AppCompatActivity {
       switch (action) {
         case UPDATE_CHECKING:
           if (mUpdateStatus != null)
-            mUpdateStatus.setText(UPDATE_MESSAGE.replace(
-                    "#STATUS#", getString(R.string.checking)));
+            mUpdateStatus.setText(UPDATE_MESSAGE);//.replace("#STATUS#", getString(R.string.checking)));
           break;
         case UPDATE_NOT_AVAILABLE:
           if (mUpdateStatus != null)
-            mUpdateStatus.setText(UPDATE_MESSAGE.replace(
-                    "#STATUS#", getString(R.string.no_updates_available)));
+            mUpdateStatus.setText(UPDATE_MESSAGE);//.replace("#STATUS#", getString(R.string.no_updates_available)));
 
           if (!System.isCoreInstalled()) {
             onInitializationError(getString(R.string.no_core_found));

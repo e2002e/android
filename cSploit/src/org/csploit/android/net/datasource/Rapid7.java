@@ -338,7 +338,7 @@ class Rapid7
   public void beginSearch(RemoteReader.Job job, String query, Target.Port port, Search.Receiver<Target.Exploit> receiver) {
     String url;
 
-    url = "http://www.rapid7.com/db/search?q=";
+    url = "http://www.rapid7.com/db/?q=";
 
     try {
       url += URLEncoder.encode(query, "UTF-8");
@@ -346,7 +346,7 @@ class Rapid7
       url += URLEncoder.encode(query);
     }
 
-    url += "&t=m";
+    url += "&type=module";
 
     Logger.debug("url = '" + url + "'");
 
