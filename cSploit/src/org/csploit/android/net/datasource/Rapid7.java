@@ -346,7 +346,7 @@ class Rapid7
       url += URLEncoder.encode(query);
     }
 
-    url += "&type=module";
+    url += "&type=metasploit";
 
     Logger.debug("url = '" + url + "'");
 
