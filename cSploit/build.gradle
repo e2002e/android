@@ -1,43 +1,43 @@
 buildscript {
     repositories {
         jcenter()
-        mavenCentral()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.5.0'
+        classpath 'com.android.tools.build:gradle:4.1.2'
     }
 }
 
-def getDate() {
+static def getDate() {
     return Calendar.getInstance().getTimeInMillis();
 }
 
 allprojects {
     repositories {
         jcenter()
-        mavenCentral()
+        google()
     }
 }
 apply plugin:  'com.android.application'
 
 dependencies {
-    compile 'com.android.support:support-v4:23.0.1'
-    compile 'com.android.support:appcompat-v7:23.0.1'
-    compile 'com.android.support:design:23.0.1'
-    compile 'com.android.support:preference-v7:23.0.1'
-    compile 'org.apache.commons:commons-compress:1.10'
-    compile 'commons-net:commons-net:3.3'
-    compile 'com.github.zafarkhaja:java-semver:0.9.0'
-    compile 'org.unbescape:unbescape:1.1.1.RELEASE'
-    compile 'org.msgpack:msgpack:0.6.12'
-    compile 'com.googlecode.juniversalchardet:juniversalchardet:1.0.3'
-    compile 'org.tukaani:xz:1.5'
-    compile 'ch.acra:acra:4.6.2'
+    implementation 'com.android.support:support-v4:23.4.0'
+    implementation 'com.android.support:appcompat-v7:23.4.0'
+    implementation 'com.android.support:design:23.4.0'
+    implementation 'com.android.support:preference-v7:23.4.0'
+    implementation 'org.apache.commons:commons-compress:1.20'
+    implementation 'commons-net:commons-net:3.3'
+    implementation 'com.github.zafarkhaja:java-semver:0.9.0'
+    implementation 'org.unbescape:unbescape:1.1.6.RELEASE'
+    implementation 'org.msgpack:msgpack:0.6.12'
+    implementation 'com.googlecode.juniversalchardet:juniversalchardet:1.0.3'
+    implementation 'org.tukaani:xz:1.8'
+    implementation 'ch.acra:acra:4.6.2'
 }
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.1'
+    buildToolsVersion '29.0.3'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
@@ -51,9 +51,8 @@ android {
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 22
-        versionCode 6
-        versionName "1.6.5"
+        versionCode 8
+        versionName "1.8.0"
         if(System.getenv("NIGHTLY_BUILD")) {
             versionName += "+" + System.getenv("NIGHTLY_BUILD_COMMIT").substring(0, 7)
         }
@@ -110,7 +109,5 @@ android {
             assets.srcDirs = ['assets']
             jniLibs.srcDir 'src/org/csploit/android/jniLibs'
         }
-
-        instrumentTest.setRoot('tests')
     }
 }
