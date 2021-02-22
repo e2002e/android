@@ -239,11 +239,11 @@ public class UpdateChecker extends Thread
 
     Update update = null;
 
-    if(checkApp)
-      update = getApkUpdate();
+    //if(checkApp)
+    //  update = getApkUpdate();
 
-    if(update == null && checkCore)
-      update = getCoreUpdate();
+    //if(update == null && checkCore)
+    //  update = getCoreUpdate();
 
     if(update == null && checkRuby)
       update = getRubyUpdate();
